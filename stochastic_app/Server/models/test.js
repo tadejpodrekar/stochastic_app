@@ -1,0 +1,57 @@
+const mongoose = require('mongoose')
+
+const testSchema = new mongoose.Schema({
+    problem:{
+        type:String,
+        required:true
+    },
+    algorithm:{
+        type:String,
+        required:true
+    },
+    maxNFES:{
+        type:Number,
+        required:true
+    },
+    population:{
+        type:Number,
+        required:true
+    },
+    runs:{
+        type:Number,
+        required:true
+    },
+    doneRuns:{
+        type:Number,
+        default:0
+    },
+    mutationFactor:{
+        type:Number,
+        required:true
+    },
+    crossoverFactor:{
+        type:Number,
+        required:true
+    },
+    stopValue:{
+        type:Number,
+        required:true
+    },
+    boundsMin:{
+        type:Number,
+        required:true
+    },
+    boundsMax:{
+        type:Number,
+        required:true
+    },
+    dimensions:{
+        type:Number,
+        required:true
+    },
+    results:{
+        type:Array
+    },
+})
+
+mongoose.model("Test",testSchema)
